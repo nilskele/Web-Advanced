@@ -87,3 +87,137 @@ button:hover {
     padding: 1em 2em 1em 2em;
     cursor: pointer;
 }
+
+/*css voor de body en de formulier*/
+
+.aboutme{
+    background-color:rgba(211, 211, 211, 1);
+    margin: 3em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 20em;
+    margin: 10em 10em 5em 10em;
+    border:2px solid  rgba(211, 211, 211, 1);
+    border-radius: 1.5em;
+    transition: all 0.3s ease-in 0s;
+
+}
+
+.aboutme_text{
+    padding: 2em;
+}
+.aboutme_app{
+    position: relative;
+    padding: 2em;
+    color: rgba(211, 211, 211, 1);
+    top: -15%;
+    right: -5%;
+    width: 60%;
+    height: 130%;
+    background-color: rgba(9,9,121,1);
+    border: 2px solid rgba(211, 211, 211, 1);
+    border-radius: 1.5em;
+    transition: all 0.3s ease-in 0s;
+}
+#contact_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+#name-mail{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 3em;
+}
+
+.glass_backdrop{
+    background-color: rgba(245, 243, 244, 0.5);
+    width: 80%;
+    height: 75vh;
+    margin: auto;
+    position: relative;
+    padding-top: 0.5em;
+    margin-top: 3em;
+    border-radius: 5em;
+
+
+}
+.inputs{
+    width: 100%; 
+    height: 3em;
+    padding: 1em;
+    border: 2px solid rgba(211, 211, 211, 1);
+    border-radius: 1em;
+    background: transparent;
+
+}
+.inputs::placeholder, textarea::placeholder{
+    color:rgba(211, 211, 211, 1);
+}
+#message{
+    position: relative;
+    width: 120%; 
+    height: 10em;
+    padding: 1em;
+    border: 2px solid rgba(211, 211, 211, 1);
+    margin-bottom: 2em;
+    left: -2em;
+    margin-right: 2em;
+    border-radius: 1em;
+    background: transparent;
+    transition: all 0.3s ease-in 0s;
+}
+#message:hover{
+    width: 150%;
+    height: 11em;
+    border: 2px solid rgba(9,9,121,1);
+
+}
+
+.inputs:focus, #message:focus {
+    background-color: rgba(9,9,121,1);
+    color: white;
+  }
+.inputs:focus::placeholder, #message:focus::placeholder {
+    color:  rgba(211, 211, 211, 1)!important;
+  }
+
+
+.aboutme:hover {
+    background-color:rgba(9,9,121,1);
+    .aboutme_text{
+        color: rgb(100, 98, 98)!important;
+        h3{
+            color: rgba(211, 211, 211, 1)!important;
+        }
+        h1{
+            color: rgb(100, 98, 98)!important;
+        }
+    }
+    .aboutme_app{
+        background-color: rgba(211, 211, 211, 1);
+        color: rgba(9,9,121,1);
+    }
+    .inputs, #message{
+        border-color: rgba(9,9,121,1);
+    }.inputs::placeholder,textarea::placeholder{
+        color: rgba(9,9,121,1);
+    }
+}
+
+.error-message{
+    color: red;
+    font-weight: bolder;
+}
+.error {
+    border: 2px solid red !important; 
+    background-color: lightcoral !important;
+}
+
+.contact_mail{
+    font-weight: 800;
+}
