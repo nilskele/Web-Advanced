@@ -221,3 +221,61 @@ button:hover {
 .contact_mail{
     font-weight: 800;
 }
+
+/*weather app*/
+.weather_app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+.weather-section {
+    margin-bottom: 40px;
+    
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #postalCodeInput{
+    width: 100%; 
+    height: 3em;
+    padding: 1em;
+    border: 2px solid rgb(23, 23, 233);
+    color: rgba(9,9,121,1);
+    border-radius: 1em;
+    background: transparent;
+  }
+  #postalCodeInput::placeholder{
+    color: darkgray;
+  }
+h1{
+    color: rgb(23, 23, 233);
+    font-weight: 800;
+}
+h2 {
+    color: rgba(9,9,121,1);
+    font-weight: 600;
+}
+h3{
+    color: black;
+    font-weight: 550;
+}
+
+  #clearButton {
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  #clearButton:hover {
+    background-color: #c82333;
+  }
