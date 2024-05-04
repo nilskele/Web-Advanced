@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Brussel",
+    "postalCode": "1000",
+    "temperature": 20,
+    "speed": 30
+  },
+  {
+    "name": "laken",
+    "postalCode": "1020",
+    "temperature": 25,
+    "speed": 30
+  },
+  {
+    "name": "Schaarbeek",
+    "postalCode": "1030",
+    "temperature": 18,
+    "speed": 30
+  },
+  {
+    "name": "Anderlecht",
+    "postalCode": "1070",
+    "temperature": 18,
+    "speed": 30
+  }
+  ,
+  {
+    "name": "Elsene",
+    "postalCode": "1050",
+    "temperature": 18,
+    "speed": 30
+  },
+  {
+    "name": "Etterbeek",
+    "postalCode": "1040",
+    "temperature": 18,
+    "speed": 30
+  }
+  ,
+  {
+    "name": "Evere",
+    "postalCode": "1140",
+    "temperature": 18,
+    "speed": 30
+  }
+]
