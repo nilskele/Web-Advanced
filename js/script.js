@@ -103,6 +103,9 @@ const displayWeather = ({ name, postalCode, ...rest }, frameId) => {
   
     document.getElementById(frameId).appendChild(weatherDiv);
   };
+  const clearInput = () => {
+    document.getElementById('postalCodeInput').value = '';
+  };
   
 const clearWeather = (frameId) => {
   const weatherDiv = document.getElementById(frameId);
