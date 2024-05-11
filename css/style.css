@@ -279,3 +279,38 @@ h3{
   #clearButton:hover {
     background-color: #c82333;
   }
+  
+  .weatherData {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgb(23, 23, 233);
+    padding: 20px;
+    margin: 10px;
+    max-width: 400px;
+  }
+  
+  .weatherData h3 {
+    margin: 10px 0;
+  }
+  
+  .city_name {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .city_postal_code {
+    font-size: 18px;
+    color: rgb(23, 23, 233);
+  }
+  
+  .city_temperature,
+  .city_wind_speed {
+    font-size: 20px;
+  }
+  
+  #weatherByPostalCode{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
