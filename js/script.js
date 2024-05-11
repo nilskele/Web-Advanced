@@ -1,4 +1,7 @@
 
+const Json_file = 'cities.json';
+
+
 function validateForm() {
     // Elementen selecteren
     var name = document.getElementById("name").value.trim();
@@ -53,3 +56,55 @@ function validateForm() {
 
     }
 }
+
+//async
+const getWeatherByPostalCode = async () => {
+    try {
+        
+        const postalCode = document.getElementById('postalCodeInput').value;
+        // await
+        const response = await fetch(Json_file);
+        const data = await response.json();
+       
+        const city = data.find(city => city.postalCode === postalCode);
+        if (city) {
+            clearWeather('weatherByPostalCode');
+            displayWeather(city, 'weatherByPostalCode');
+        } else {
+            
+            alert('City not found.');
+        }
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+};
+//destructering, rest
+const displayWeather = ({ name, postalCode, ...rest }, frameId) => {
+    const weatherDiv = document.createElement('div');
+    weatherDiv.classList.add('weatherData');
+  
+    const cityNameElement = document.createElement('h3');
+    cityNameElement.textContent = name;
+    cityNameElement.classList.add('city_name');
+    weatherDiv.appendChild(cityNameElement);
+  
+    const postalCodeElement = document.createElement('h3');
+    postalCodeElement.textContent = postalCode;
+    postalCodeElement.classList.add('city_postal_code');
+    weatherDiv.appendChild(postalCodeElement);
+  
+    //spread
+    for (const property in rest) {
+      const propertyElement = document.createElement('h3');
+      propertyElement.textContent = `${property}: ${rest[property]}`;
+      propertyElement.classList.add(`city_${property}`);
+      weatherDiv.appendChild(propertyElement);
+    }
+  
+    document.getElementById(frameId).appendChild(weatherDiv);
+  };
+  
+const clearWeather = (frameId) => {
+  const weatherDiv = document.getElementById(frameId);
+  weatherDiv.innerHTML = '';
+};

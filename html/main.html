@@ -66,15 +66,17 @@
     </div>
 </div>
 <div class="glass_backdrop weather_app">
-    <h1>Combined Weather App</h1>
-<div class="weather-section">
-<h2>Weather App with Input Field</h2>
-<div>
-    <input type="text" id="postalCodeInput" placeholder="Enter Postal Code">
-    <button onclick="">Get Weather</button>
-    <button id="clearButton" onclick="">Clear Input</button>
-</div>
-<div id="weatherByPostalCode"></div>
+    
+    <div class="glass_backdrop weather_app">
+        <h1>Weather App</h1>
+    <div class="weather-section">
+    <h2>get the weather by postal code</h2>
+    <div>
+        <input type="text" id="postalCodeInput" placeholder="Enter Postal Code">
+        <button onclick="getWeatherByPostalCode()">Get Weather</button>
+        <button id="clearButton" onclick="clearInput()">Clear Input</button>
+    </div>
+    <div id="weatherByPostalCode"></div>
 </div>
 
 <body>
