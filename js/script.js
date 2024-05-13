@@ -3,6 +3,7 @@ const Json_file = 'cities.json';
 
 // formulier
 function validateForm() {
+  return new Promise((resolve, reject) => {
 
     var name = document.getElementById("name").value.trim();
     var email = document.getElementById("email").value.trim();
@@ -48,14 +49,25 @@ function validateForm() {
     if (!isValid) {
         validatieBericht.innerText = "Vul alle verplichte velden in.";
         validatieBericht.classList.add("error");
+        reject("form is niet goed gevalideerd");
     } else {
         validatieBericht.innerText = "Formulier succesvol ingediend!";
         validatieBericht.classList.remove("error");
         document.getElementById("contact_form").reset(); 
+        resolve("form is goed gevalideerd")
         
 
+        
     }
+  });
 }
+validateForm()
+  .then((message) => {
+    console.log(message); 
+  })
+  .catch((error) => {
+    console.error(error); 
+  });
 // weather app
 const getWeatherByPostalCode = async () => {
     try {
@@ -135,13 +147,10 @@ const clearWeather = (frameId) => {
         `;
         document.body.appendChild(popup);
   
-        function popupClosedCallback() {
-          console.log("Popup is toe zonder te submitten.");
-        }
+       
     
         document.getElementById('closePopup').addEventListener('click', () => {
           popup.style.display = 'none';
-          popupClosedCallback(); 
         });
 
 
@@ -181,3 +190,5 @@ const clearWeather = (frameId) => {
   const clearSpread = () => {
     document.getElementById('spreadInput').value = '';
   };
+
+localStorage.clear();
