@@ -1,9 +1,9 @@
 
 const Json_file = 'cities.json';
 
-
+// formulier
 function validateForm() {
-    // Elementen selecteren
+
     var name = document.getElementById("name").value.trim();
     var email = document.getElementById("email").value.trim();
     var message = document.getElementById("message").value.trim();
@@ -13,7 +13,7 @@ function validateForm() {
 
     var isValid = true;
 
-    // Elementen manipuleren
+
     if (name === "") {
         nameError.innerText = "Vul uw naam in";
         document.getElementById("name").classList.add("error");
@@ -56,13 +56,11 @@ function validateForm() {
 
     }
 }
-
-//async
+// weather app
 const getWeatherByPostalCode = async () => {
     try {
         
         const postalCode = document.getElementById('postalCodeInput').value;
-        // await
         const response = await fetch(Json_file);
         const data = await response.json();
        
@@ -74,11 +72,11 @@ const getWeatherByPostalCode = async () => {
             
             alert('City not found.');
         }
-    } catch (error) {
-        console.error('Error fetching data:', error);
+    } catch {
+        console.error('Error fetching data');
     }
 };
-//destructering, rest
+
 const displayWeather = ({ name, postalCode, ...rest }, frameId) => {
     const weatherDiv = document.createElement('div');
     weatherDiv.classList.add('weatherData');
@@ -93,7 +91,7 @@ const displayWeather = ({ name, postalCode, ...rest }, frameId) => {
     postalCode_nr.classList.add('city_postal_code');
     weatherDiv.appendChild(postalCode_nr);
   
-    //spread
+
     for (const property in rest) {
       const propertyElement = document.createElement('h3');
       propertyElement.textContent = `${property}: ${rest[property]}`;
@@ -112,7 +110,8 @@ const clearWeather = (frameId) => {
   weatherDiv.innerHTML = '';
 };
 
-// Self-executing
+
+// self executing subscription popup
 (function() {
 
     const isSubscribed = localStorage.getItem('subscribed');
@@ -122,7 +121,7 @@ const clearWeather = (frameId) => {
   
         const popup = document.createElement('div');
         popup.classList.add('popup');
-        //template literals
+
         popup.innerHTML = `
             <div class="popup-content">
                 <h2>Abonneer op onze nieuwsbrief</h2>
@@ -144,16 +143,41 @@ const clearWeather = (frameId) => {
           popup.style.display = 'none';
           popupClosedCallback(); 
         });
-    
-  
-  
-        document.getElementById('subscribeForm').addEventListener('submit', (event) => {
+
+
+        function submitCallback(event) {
             event.preventDefault(); 
-            const email = document.getElementById('emailInput').value;
             localStorage.setItem('subscribed', true);
             alert('Bedankt voor uw abonnement!');
             popup.style.display = 'none';
-        });
+        }
+
+        document.getElementById('subscribeForm').addEventListener('submit', submitCallback);
+        
     }
   })();
   
+
+ // Spread operator
+  var spreads = [];
+  
+  function addSpread(){
+    var spreadInput = document.getElementById('spreadInput').value.trim();
+    spreads.push(parseFloat(spreadInput));
+    document.getElementById('spreadInput').value = '';
+    
+    
+  }
+   function showSpread(){
+    calculateMax(...spreads);
+  }
+
+
+  function calculateMax(...numbers) {
+    var spread = document.getElementById('spread');
+    spread.innerHTML = Math.max(...numbers);
+  }
+
+  const clearSpread = () => {
+    document.getElementById('spreadInput').value = '';
+  };
