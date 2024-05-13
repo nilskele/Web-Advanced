@@ -83,15 +83,15 @@ const displayWeather = ({ name, postalCode, ...rest }, frameId) => {
     const weatherDiv = document.createElement('div');
     weatherDiv.classList.add('weatherData');
   
-    const cityNameElement = document.createElement('h3');
-    cityNameElement.textContent = name;
-    cityNameElement.classList.add('city_name');
-    weatherDiv.appendChild(cityNameElement);
+    const cityName = document.createElement('h3');
+    cityName.textContent = name;
+    cityName.classList.add('city_name');
+    weatherDiv.appendChild(cityName);
   
-    const postalCodeElement = document.createElement('h3');
-    postalCodeElement.textContent = postalCode;
-    postalCodeElement.classList.add('city_postal_code');
-    weatherDiv.appendChild(postalCodeElement);
+    const postalCode_nr = document.createElement('h3');
+    postalCode_nr.textContent = postalCode;
+    postalCode_nr.classList.add('city_postal_code');
+    weatherDiv.appendChild(postalCode_nr);
   
     //spread
     for (const property in rest) {
@@ -111,3 +111,49 @@ const clearWeather = (frameId) => {
   const weatherDiv = document.getElementById(frameId);
   weatherDiv.innerHTML = '';
 };
+
+// Self-executing
+(function() {
+
+    const isSubscribed = localStorage.getItem('subscribed');
+  
+  
+    if (!isSubscribed) {
+  
+        const popup = document.createElement('div');
+        popup.classList.add('popup');
+        //template literals
+        popup.innerHTML = `
+            <div class="popup-content">
+                <h2>Abonneer op onze nieuwsbrief</h2>
+                <p>Blijf op de hoogte van onze laatste nieuwtjes en updates!</p>
+                <form id="subscribeForm">
+                    <input type="email" id="emailInput" placeholder="Voer uw e-mailadres in" required>
+                    <button type="submit">Abonneren</button>
+                </form>
+                <button id="closePopup">Sluiten</button>
+            </div>
+        `;
+        document.body.appendChild(popup);
+  
+        function popupClosedCallback() {
+          console.log("Popup is toe zonder te submitten.");
+        }
+    
+        document.getElementById('closePopup').addEventListener('click', () => {
+          popup.style.display = 'none';
+          popupClosedCallback(); 
+        });
+    
+  
+  
+        document.getElementById('subscribeForm').addEventListener('submit', (event) => {
+            event.preventDefault(); 
+            const email = document.getElementById('emailInput').value;
+            localStorage.setItem('subscribed', true);
+            alert('Bedankt voor uw abonnement!');
+            popup.style.display = 'none';
+        });
+    }
+  })();
+  

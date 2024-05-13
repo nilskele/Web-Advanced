@@ -279,7 +279,7 @@ h3{
   #clearButton:hover {
     background-color: #c82333;
   }
-  
+
   .weatherData {
     background-color: white;
     border-radius: 10px;
@@ -314,3 +314,40 @@ h3{
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 9999;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+.popup h2 {
+    margin-top: 0;
+}
+
+.popup button {
+    margin-top: 10px;
+}
+
+.popup input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.popup input[type="email"]:focus {
+    outline: none;
+    border-color: dodgerblue;
+}
