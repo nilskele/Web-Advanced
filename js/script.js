@@ -1,18 +1,18 @@
-
+'use strict';
 const Json_file = 'cities.json';
 
 // formulier
 function validateForm() {
   return new Promise((resolve, reject) => {
 
-    var name = document.getElementById("name").value.trim();
-    var email = document.getElementById("email").value.trim();
-    var message = document.getElementById("message").value.trim();
-    var nameError = document.getElementById("nameError");
-    var emailError = document.getElementById("emailError");
-    var messageError = document.getElementById("messageError");
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+    let nameError = document.getElementById("nameError");
+    let emailError = document.getElementById("emailError");
+    let messageError = document.getElementById("messageError");
 
-    var isValid = true;
+    let isValid = true;
 
 
     if (name === "") {
@@ -45,7 +45,7 @@ function validateForm() {
     }
 
 
-    var validatieBericht = document.getElementById("validatieBericht");
+    let validatieBericht = document.getElementById("validatieBericht");
     if (!isValid) {
         validatieBericht.innerText = "Vul alle verplichte velden in.";
         validatieBericht.classList.add("error");
@@ -168,10 +168,10 @@ const clearWeather = (frameId) => {
   
 
  // Spread operator
-  var spreads = [];
+  let spreads = [];
   
   function addSpread(){
-    var spreadInput = document.getElementById('spreadInput').value.trim();
+    let spreadInput = document.getElementById('spreadInput').value.trim();
     spreads.push(parseFloat(spreadInput));
     document.getElementById('spreadInput').value = '';
     
@@ -183,7 +183,7 @@ const clearWeather = (frameId) => {
 
 
   function calculateMax(...numbers) {
-    var spread = document.getElementById('spread');
+    let spread = document.getElementById('spread');
     spread.innerHTML = Math.max(...numbers);
   }
 
