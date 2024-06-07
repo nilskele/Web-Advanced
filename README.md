@@ -1,6 +1,6 @@
 Nils Kelecom Web Advanced Portfolio:
 
-Dit portfolio Website is een opdracht voor een vak Web Advanced aan de Erasmus Hogeschool brussel. 
+Dit portfolio Website is een opdracht voor het vak Web Advanced aan de Erasmus Hogeschool brussel. 
 In deze website zijn al de requirements die u hier onder ziet verwerkt aan de hand van kleine projectjes zoals een formulier, weather app, subscription popup en Spread machine. 
 
 1. ELEMENTEN SELECTEREN = javascript file lijn 7
